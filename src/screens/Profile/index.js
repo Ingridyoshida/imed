@@ -5,22 +5,29 @@ import { useNavigation } from '@react-navigation/native';
 
 import {
     Container,
+    ExamesText,
     Exames,
     UpExames,
-    IconExames,
+    UpExamesText,
+    ItemUser,
     ItemUserSearch,
     UserSearch,
     ItemChat,
-    Chat, 
-    ItemSair,
-    Sair 
+    ChatBox,
+    ChatText, 
+    ItemExit,
+    ExitBox,
+    ExitText
         
 } from './styles';
 
-import Upload from '../../assets/upload.svg';
+import Documents from '../../assets/exames.svg';
+import Medicine from '../../assets/upload.svg';
+import User from '../../assets/avatar4.svg';
+import Chat from '../../assets/chat.svg';
+import Exit from '../../assets/exit.svg';
 
 import Api from '../../Api';
-
 
 export default () => {
     const navigation = useNavigation();
@@ -31,25 +38,50 @@ export default () => {
             routes:[{name:'SignIn'}]
         });
     }
-    
 
+    const handleExamsClick = () => {
+        navigation.reset({
+            routes: [{name:'Exams'}]
+        });
+    } 
+    
     return (
         <Container>  
+             <Exames onPress={()=>{}} underlayColor="#4EADBE" activeOpacity={0.3} >
+                <UpExames>
+                    <ExamesText>Exames</ExamesText>
+                    <Documents width="28" height="28" fill="#FFFFFF" />
+                </UpExames>
+            </Exames>
             
-            <Exames onPress={()=>{}} underlayColor="#4EADBE" activeOpacity={0.3}>
-                 <UpExames>Importar exames</UpExames>
+            <Exames onPress={handleExamsClick} underlayColor="#4EADBE" activeOpacity={0.3} >
+                <UpExames>
+                    <UpExamesText>Importar Exames</UpExamesText>
+                    <Medicine width="28" height="28" fill="#FFFFFF" />
+                </UpExames>
             </Exames>
 
-            <ItemUserSearch onPress={()=>{}} underlayColor="#4EADBE" activeOpacity={0.3}>
-                <UserSearch>Dados do usuario</UserSearch>
-            </ItemUserSearch>
+            <ItemUser  onPress={()=>{}} underlayColor="#4EADBE" activeOpacity={0.3}>
+                <ItemUserSearch>
+                    <UserSearch>Dados do usuario</UserSearch>
+                    <User width="28" height="28" fill="#FFFFFF" />
+                </ItemUserSearch>
+            </ItemUser>
+            
             <ItemChat onPress={()=>{}} underlayColor="#4EADBE" activeOpacity={0.3}>
-                <Chat>Chat</Chat>
+                <ChatBox>
+                    <ChatText>Chat</ChatText>
+                    <Chat width="28" height="28" fill="#FFFFFF" />
+                </ChatBox>
             </ItemChat>
             
-           <ItemSair onPress={handleLogoutClick} underlayColor="#4EADBE" activeOpacity={0.3}>
-              <Sair>Sair</Sair>
-           </ItemSair>
+
+           <ItemExit onPress={handleLogoutClick} underlayColor="#4EADBE" activeOpacity={0.3}>
+               <ExitBox>
+                  <ExitText>Sair</ExitText>
+                  <Exit width="28" height="28" fill="#FFFFFF" />
+               </ExitBox>       
+           </ItemExit>
            
         </Container>
     );
