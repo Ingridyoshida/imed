@@ -2,6 +2,8 @@ import React, { useState, useContext } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-community/async-storage';
 import Swiper from 'react-native-swiper';
+import ImagePicker from 'react-native-image-crop-picker';
+
 
 import { UserContext } from '../../contexts/UserContext';
 
@@ -80,6 +82,16 @@ export default () => {
         navigation.reset({
             routes: [{name: 'SignIn'}]
         });
+    }
+
+    const choosePhotoFromLibrary = () => {
+        ImagePicker.openPicker({
+            width: 300,
+            height: 400,
+            cropping: true
+          }).then(image => {
+            console.log(image);
+          });
     }
 
     return (
@@ -198,7 +210,7 @@ export default () => {
                 <SvgPhoto>
                      <Avatar width="100%" height="150" />
                 </SvgPhoto>
-                <ImageButton>
+                <ImageButton onPress={choosePhotoFromLibrary}>
                       <PhotoText>Foto</PhotoText>
                 </ImageButton>
         
