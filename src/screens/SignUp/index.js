@@ -39,7 +39,6 @@ import Cellphone from '../../assets/cellphone1.svg';
 import Remedy from '../../assets/remedy.svg';
 import DNA from '../../assets/dna.svg';
 import Esteto from '../../assets/esteto.svg';
-import Camera from '../../assets/camera.svg';
 import Avatar from '../../assets/avatar2.svg';
 
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import { Text, Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import {
@@ -29,7 +28,7 @@ import Exit from '../../assets/exit.svg';
 
 import Api from '../../Api';
 
-export default () => {
+export default (props) => {
     const navigation = useNavigation();
 
     const handleLogoutClick = async () => {
@@ -40,35 +39,45 @@ export default () => {
     }
 
     const handleExamsClick = () => {
-        navigation.reset({
-            routes: [{name:'Exams'}]
-        });
+        props.navigation.navigate('Exams');
+    } 
+
+    const handleUpexamsClick = () => {
+        props.navigation.navigate('Upexams');
+    } 
+
+    const handleUserdataClick = () => {
+        props.navigation.navigate('Userdata');
+    } 
+
+    const handleChatClick = () => {
+        props.navigation.navigate('Chat');
     } 
     
     return (
         <Container>  
-             <Exames onPress={()=>{}} underlayColor="#4EADBE" activeOpacity={0.3} >
+             <Exames onPress={handleExamsClick} underlayColor="#4EADBE" activeOpacity={0.3} >
                 <UpExames>
                     <ExamesText>Exames</ExamesText>
                     <Documents width="28" height="28" fill="#FFFFFF" />
                 </UpExames>
             </Exames>
             
-            <Exames onPress={handleExamsClick} underlayColor="#4EADBE" activeOpacity={0.3} >
+            <Exames onPress={handleUpexamsClick} underlayColor="#4EADBE" activeOpacity={0.3} >
                 <UpExames>
                     <UpExamesText>Importar Exames</UpExamesText>
                     <Medicine width="28" height="28" fill="#FFFFFF" />
                 </UpExames>
             </Exames>
 
-            <ItemUser  onPress={()=>{}} underlayColor="#4EADBE" activeOpacity={0.3}>
+            <ItemUser  onPress={handleUserdataClick} underlayColor="#4EADBE" activeOpacity={0.3}>
                 <ItemUserSearch>
                     <UserSearch>Dados do usuario</UserSearch>
                     <User width="28" height="28" fill="#FFFFFF" />
                 </ItemUserSearch>
             </ItemUser>
             
-            <ItemChat onPress={()=>{}} underlayColor="#4EADBE" activeOpacity={0.3}>
+            <ItemChat onPress={handleChatClick} underlayColor="#4EADBE" activeOpacity={0.3}>
                 <ChatBox>
                     <ChatText>Chat</ChatText>
                     <Chat width="28" height="28" fill="#FFFFFF" />

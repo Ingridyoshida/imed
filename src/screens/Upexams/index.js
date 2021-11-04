@@ -6,10 +6,15 @@ import {
     Container,
     Header,
     BackButton,
-    HeaderText 
-        
+    HeaderText,
+    Body,
+    PdfExams,
+    PdfTextArea,
+    PdfText
+           
 } from './styles';
 
+import Pdf from '../../assets/pdf.svg';
 import ClickBack from '../../assets/back2.svg';
 
 export default () => {
@@ -20,16 +25,21 @@ export default () => {
     }
 
     return (
-       
-
         <Container>
             <Header>
                 <BackButton onPress={handleGobackClick} underlayColor="#4EADBE" activeOpacity={0.3} >
                 <ClickBack width="30" height="30" />
                 </BackButton>
-                <HeaderText>Exames</HeaderText>
+                <HeaderText>Importe seus Exames</HeaderText>
             </Header>
-          
+            <Body>
+            <PdfTextArea>
+               <PdfText>Clique para importar</PdfText>
+          </PdfTextArea>
+                <PdfExams>
+                    <Pdf width="60" height="60" fill="#FFFFFF" />
+                </PdfExams>
+            </Body>
         </Container>
     );
 }

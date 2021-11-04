@@ -1,11 +1,9 @@
-import React from 'react';
 import styled from 'styled-components/native';
-
 
 export const Container = styled.SafeAreaView`
     flex:1;
     background-color: #63C2D1;
-    padding-top: 20px;
+
 `;
 
 export const Header = styled.View`
@@ -31,4 +29,30 @@ export const HeaderText = styled.Text`
     align-items: center;
 `;
 
- 
+export const Body = styled.View`
+   flex: 1;
+   justify-content: center;
+   align-items: center;
+`;
+
+export const PdfExams = styled.TouchableOpacity`
+    width:150px;
+    height: 150px;
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+    border:1px dashed;
+`;
+
+export const PdfTextArea = styled.View`
+    width:100%;
+    height: 40px;
+    background-color: #63C2D1;
+    justify-content: center;
+    align-items: center;
+`;
+
+export const PdfText = styled.Text`
+    font-size: 18px;
+    color: #fff;
+`;

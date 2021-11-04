@@ -27,7 +27,7 @@ export default () => {
                 <BackButton onPress={handleGobackClick} underlayColor="#4EADBE" activeOpacity={0.3} >
                 <ClickBack width="30" height="30" />
                 </BackButton>
-                <HeaderText>Exames</HeaderText>
+                <HeaderText>Dados do usuário</HeaderText>
             </Header>
           
         </Container>

@@ -30,5 +30,3 @@ export const HeaderText = styled.Text`
     padding-left: 22px;
     align-items: center;
 `;
-
- 
